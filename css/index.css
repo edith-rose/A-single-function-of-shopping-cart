@@ -1,0 +1,267 @@
+body  {
+  font-size: 12px;
+  background: #fff;
+  font-family:"微软雅黑";
+  text-align: center;
+  color: #333;
+  background: #fff;
+  margin: 0px;
+  padding: 0px;
+}
+div {
+  margin: 0 auto;
+  padding: 0;
+}
+th {
+  text-align: left;
+}
+h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd, form, img, p {
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style-type: none;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.wrap {
+  background-color: #fff;
+}
+
+.content {
+  width: 1200px;
+  margin: 0 auto; 
+  margin-top: 20px;
+}
+
+#procedure {
+  overflow: hidden;
+  margin-top: 55px;
+  margin-bottom: 23px;
+}
+
+#procedure h3 {
+  line-height: 31px;
+  font-size: 24px;
+  color: #000;
+  margin-right: 40px;
+}
+
+#procedure .img {
+  width: 665px;
+  height: 31px;
+  display: block;
+  background: url(../images/order-img.png) no-repeat 0 -40px;
+}
+
+#procedure .img span {
+  display: inline-block;
+  width: 215px;
+  line-height: 32px;
+  font-style: normal;
+  text-align: left;
+  text-indent: 30px;
+  float: left;
+  color: #fff;
+  font-size: 16px;
+}
+
+#procedure .img span.span3 {
+  text-indent: 80px;
+}
+
+#ShoppingCartInfo {
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  background: #fafafa;
+  font-size: 14px;
+}
+
+#ShoppingCartInfo span {
+  padding-left: 15px;
+}
+
+#ShoppingCartInfo ul li {
+  float: left;
+  text-indent: center;
+  color: #8c8c8c;
+}
+
+.unit-price {
+  width: 80px;
+}
+
+#ShoppingCartInfo ul li i {
+  float: left;
+  font-style: normal;
+  color: #dfdfdf;
+}
+
+.quantity {
+  width: 130px;
+}
+
+.calculation {
+  width: 104px;
+}
+
+.operating {
+  width: 108px;
+}
+
+#ShoppingCartList {
+  margin-bottom: 30px;
+}
+
+#ShoppingCartList .commodity {
+  height: 144px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+#ShoppingCartList dl {
+  float: left;
+  width: 670px;
+}
+
+#ShoppingCartList dl dt {
+  float: left;
+  width: 180px;
+  height: 102px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: 1px solid #dfdede;
+}
+
+#ShoppingCartList dl dt img {
+  width: 180px;
+  height: 102px;
+}
+
+#ShoppingCartList dl dd {
+  text-align: left;
+}
+
+#ShoppingCartList dl dd.sc-t {
+  padding-top: 46px;
+  font-size: 16px;
+}
+
+#ShoppingCartList  a:hover {
+  text-decoration: underline;
+}
+
+#ShoppingCartList .delete {
+  padding-top: 60px;
+  color: #397abd;
+  font-size: 14px;
+}
+
+.sc-opera {
+  width: 108px;
+}
+
+#ShoppingCartList .calculation {
+  padding-top: 60px;
+  font-size: 16px;
+  color: #f97400;
+}
+
+.sc-calculation {
+  width: 104px;
+}
+
+#ShoppingCartList .quantity {
+  padding-top: 60px;
+}
+
+.sc-quantity {
+  width: 130px;
+}
+
+#ShoppingCartList .quantity button {
+  float: left;
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-top: 7px;
+  cursor: pointer;
+  border: none;
+}
+
+#ShoppingCartList button.cut {
+  margin-left: 30px;
+  background: url(../images/icon_cut.png) no-repeat left center;
+}
+
+#ShoppingCartList .input-quantity {
+  width: 40px;
+  height: 18px;
+  margin: 0 5px;
+  border: 1px solid #dfdfdf;
+  text-align: center;
+  float: left;
+}
+
+#ShoppingCartList .add {
+  background: url(../images/icon_add.png) no-repeat left center;
+}
+
+#ShoppingCartList  .price {
+  padding-top: 62px;
+}
+
+#ShoppingCartList .sc-price {
+  width: 80px;
+}
+
+#ShoppingCartList p.value {
+  color: #999;
+  font-size: 12px;
+}
+
+#Settlement {
+  text-align: right;
+}
+
+#Settlement .wrap {
+  background: #c1c1c1;
+  height: 60px;
+  line-height: 60px;
+  padding-right: 10px;
+}
+
+#Settlement p {
+  line-height: 60px;
+  font-size: 14px;
+  padding-left: 50px;
+}
+
+#Settlement p span {
+  color: #f40;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+#Settlement .total-price p {
+  font-size: 20px;
+}
+
+#Settlement .total-price p span {
+  font-size: 24px;
+}
+
+.red {
+  background: red;
+}

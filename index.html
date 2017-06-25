@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="my-app">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/angular1.5.8.js"></script>
+  <script src="js/index.js"></script>
+</head>
+<body>
+  <div class="wrap" ng-controller="my-controller">
+    <div class="content">
+      <div id="procedure">
+        <h3 class="fl">我的购物车</h3>
+        <div class="img fr">
+          <span class="span1">1、我的购物车</span>
+          <span class="span2">2、填写订单</span>
+          <span class="span3">3、完成订单</span>
+        </div>
+      </div> 
+      <div id="ShoppingCartInfo">
+        <span class="fl">商品</span>
+        <ul class="fr clearfix">
+          <li class="unit-price">
+            <i>|</i>
+            单价
+          </li>
+          <li class="quantity">
+            <i>|</i>
+            数量
+          </li>
+          <li class="calculation">
+            <i>|</i>
+            小计
+          </li>
+          <li class="operating">
+            <i>|</i>
+            操作
+          </li>
+        </ul>
+      </div>
+      <div id="ShoppingCartList">
+        <div class="commodity" ng-repeat="value in commodityList">
+          <dl>
+            <dt>
+              <img ng-src="images/{{value.img}}">
+            </dt>
+            <dd class="sc-t">
+              <a href="">{{value.name}}</a>
+            </dd>
+          </dl>
+          <a href="" ng-click="del($index)" class="fr delete sc-opera">删除</a>
+          <div class="fr sc-calculation calculation">
+            <p>￥
+              <span class="sc-txt">{{value.count * value.price}}</span>
+            </p>
+          </div>
+          <div class="fr sc-quantity quantity">
+            <button class="cut" ng-disabled="value.count==1" ng-class="{red: value.count==1}" ng-click="reduce(value);"></button>
+            <input type="text" ng-model="value.count"  class="input-quantity">
+            <button class="add" ng-click="add(value);"></button>
+          </div>
+          <div class="fr sc-price price">
+            <p class="value">￥
+              <span class="price-txt">{{value.price}}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix" id="Settlement">
+        <div class="wrap">
+          <div class="fl">
+            <input type="checkbox" class="select-all" />全选
+          </div>
+          <div class="fl">
+            <p>已选<span>3</span>件商品</p>
+          </div>
+          <div class="fl">
+            <p>不含运费和进口税
+            </p>
+          </div>
+          <div class="fr total-price">
+            <p>应付金额：
+              <b>￥<span>{{totalPrice()}}</span></b>
+            </p>
+          </div>
+        </div>
+      </div>     
+    </div>
+  </div>
+</body>
+</html>
