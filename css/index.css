@@ -126,8 +126,25 @@ a, a:hover {
 }
 
 #ShoppingCartList .commodity {
+  border: 2px solid #dfdfdf;
+  margin: 16px auto;
+  /*border-bottom: 2px solid #dfdfdf;*/
+}
+
+#ShoppingCartList .seller-shop {
+  height: 30px;
+  border-bottom: 1px solid #eee;
+  margin-top: 10px;
+  text-align: left;
+  line-height: 30px;
+}
+
+#ShoppingCartList .commodity-list {
   height: 144px;
-  border-bottom: 1px solid #dfdfdf;
+}
+
+#ShoppingCartList .select-product {
+  margin: 20px 20px auto 20px;
 }
 
 #ShoppingCartList dl {

@@ -19,6 +19,9 @@
         </div>
       </div> 
       <div id="ShoppingCartInfo">
+        <div class="fl">
+          <input type="checkbox" ng-checked="allIsSelect()" ng-click="allSelect($event)" class="select-all">全选
+        </div>
         <span class="fl">商品</span>
         <ul class="fr clearfix">
           <li class="unit-price">
@@ -40,40 +43,48 @@
         </ul>
       </div>
       <div id="ShoppingCartList">
-        <div class="commodity" ng-repeat="value in commodityList">
-          <dl>
-            <dt>
-              <img ng-src="images/{{value.img}}">
-            </dt>
-            <dd class="sc-t">
-              <a href="">{{value.name}}</a>
-            </dd>
-          </dl>
-          <a href="" ng-click="del($index)" class="fr delete sc-opera">删除</a>
-          <div class="fr sc-calculation calculation">
-            <p>￥
-              <span class="sc-txt">{{value.count * value.price}}</span>
-            </p>
+        <div class="commodity" ng-repeat="shop in shops" ng-show="shop.commodityList.length > 0">
+          <div class="seller-shop">
+            <input type="checkbox" ng-checked="shopAllCommodityIsSelect(shop.commodityList)" ng-click='shopAllCommoditySelect(shop.commodityList, $event)' />
+            <span>
+              <b>店铺：</b>{{shop.shopname}}
+            </span>
           </div>
-          <div class="fr sc-quantity quantity">
-            <button class="cut" ng-disabled="value.count==1" ng-class="{red: value.count==1}" ng-click="reduce(value);"></button>
-            <input type="text" ng-model="value.count"  class="input-quantity">
-            <button class="add" ng-click="add(value);"></button>
-          </div>
-          <div class="fr sc-price price">
-            <p class="value">￥
-              <span class="price-txt">{{value.price}}</span>
-            </p>
+          <div class="commodity-list" ng-repeat="commodity in shop.commodityList">
+            <div class="fl">
+              <input type="checkbox" ng-model="commodity.selected" class="select-product" />
+            </div>
+            <dl>
+              <dt>
+                <img ng-src="images/{{commodity.img}}">
+              </dt>
+              <dd class="sc-t">
+                <a href="">{{commodity.name}}</a>
+              </dd>
+            </dl>
+            <a href="" ng-click="del(shop.commodityList, $index)" class="fr delete sc-opera">删除</a>
+            <div class="fr sc-calculation calculation">
+              <p>￥
+                <span class="sc-txt">{{commodity.count * commodity.price}}</span>
+              </p>
+            </div>
+            <div class="fr sc-quantity quantity">
+              <button class="cut" ng-disabled="commodityList.count==1" ng-class="{red: commodity.count==1}" ng-click="reduce(commodity);"></button>
+              <input type="text" ng-model="commodity.count"  class="input-quantity">
+              <button class="add" ng-click="add(commodity);"></button>
+            </div>
+            <div class="fr sc-price price">
+              <p class="value">￥
+                <span class="price-txt">{{commodity.price}}</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
       <div class="clearfix" id="Settlement">
         <div class="wrap">
           <div class="fl">
-            <input type="checkbox" class="select-all" />全选
-          </div>
-          <div class="fl">
-            <p>已选<span>3</span>件商品</p>
+            <input type="checkbox" ng-checked="allIsSelect()" ng-click="allSelect($event)" class="select-all" />全选
           </div>
           <div class="fl">
             <p>不含运费和进口税
@@ -83,6 +94,9 @@
             <p>应付金额：
               <b>￥<span>{{totalPrice()}}</span></b>
             </p>
+          </div>
+          <div class="fr">
+            <p>已选<span>{{totalQuantity()}}</span>件商品</p>
           </div>
         </div>
       </div>     
